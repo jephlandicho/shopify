@@ -243,7 +243,7 @@
                       name="quantity"
                       id="Quantity-{{ section.id }}"
                       data-cart-quantity="{{ cart_qty }}"
-                      min="6"
+                      min="{{ product.metafields.custom.min_quantity }}"
                       data-min="{{ product.metafields.custom.min_quantity }}"
                       value="{{ product.metafields.custom.min_quantity }}"
                       form="{{ product_form_id }}"
