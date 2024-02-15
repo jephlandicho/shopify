@@ -304,6 +304,7 @@
                           {%- if variant_price_compare -%}
                             <dl class="price-per-item--current">
                               <dt class="visually-hidden">
+                            {{ product.metafields.custom.min_quantity }}
                                 {{ 'products.product.price.regular_price' | t }}
                               </dt>
                               <dd>
