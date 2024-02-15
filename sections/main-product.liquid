@@ -252,19 +252,15 @@
                       oninput="checkMinimumQuantity(this)"
                     />
             <script>
-function checkMinimumQuantity(input) {
-    var minQuantity = parseInt(input.getAttribute('data-min'));
-    var enteredValue = parseInt(input.value);
-    
-    if (enteredValue < minQuantity) {
-        // Only change the value if it's less than the minimum
-        // Otherwise, keep the entered value as it is
-        input.setCustomValidity('Please enter a value greater than or equal to ' + minQuantity);
-    } else {
-        input.setCustomValidity('');
-    }
-}
-</script>
+            function checkMinimumQuantity(input) {
+              var minQuantity = parseInt(input.getAttribute('data-min'));
+              var enteredValue = parseInt(input.value);
+              
+              if (enteredValue < minQuantity) {
+                input.value = minQuantity;
+              }
+            }
+            </script>
                     <button class="quantity__button no-js-hidden" name="plus" type="button">
                       <span class="visually-hidden">
                         {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
