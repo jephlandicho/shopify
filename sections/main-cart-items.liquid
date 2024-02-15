@@ -254,7 +254,7 @@
                                 name="updates[]"
                                 value="{{ item.quantity }}"
                                 {% # theme-check-disable %}
-                                data-cart-quantity="{{ cart | item_count_for_variant: item.variant.id }}"
+                                data-cart-quantity="{{ product.metafields.custom.min_quantity }}"
                                 min="{{ product.metafields.custom.min_quantity }}"
                                 data-min="{{ product.metafields.custom.min_quantity }}"
                                 {% if item.variant.quantity_rule.max != null %}
