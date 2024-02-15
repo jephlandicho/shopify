@@ -245,13 +245,21 @@
                       type="number"
                       name="quantity"
                       id="Quantity-{{ section.id }}"
-
                       min="{{ min_quantity}}"
                       data-min="{{ min_quantity }}"
                       value="{{ min_quantity }}"
-                      onkeydown="return false"
                       form="{{ product_form_id }}"
                     />
+            <script>
+            function checkMinimumQuantity(input) {
+              var minQuantity = parseInt(input.getAttribute('data-min'));
+              var enteredValue = parseInt(input.value);
+              
+              if (enteredValue < minQuantity) {
+                input.value = minQuantity;
+              }
+            }
+            </script>
                     <button class="quantity__button no-js-hidden" name="plus" type="button">
                       <span class="visually-hidden">
                         {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
@@ -309,7 +317,6 @@
                               </dt>
                               <dd>
                                 <s class="variant-item__old-price">
-                            {{ product.metafields.custom.min_quantity }}
                                   {{ variant_price_compare | money_with_currency }}
                                 </s>
                               </dd>
