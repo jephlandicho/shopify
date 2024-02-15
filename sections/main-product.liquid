@@ -237,6 +237,9 @@
                       {% render 'icon-minus' %}
                     </button>
           {% assign min_quantity = product.metafields.custom.min_quantity  %}
+            {% if min_quantity == blank %}
+              {% assign min_quantity = 1 %}
+            {% endif %}
                     <input
                       class="quantity__input"
                       type="number"
