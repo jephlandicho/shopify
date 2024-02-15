@@ -242,6 +242,7 @@
                       type="number"
                       name="quantity"
                       id="Quantity-{{ section.id }}"
+                      min="{{ product.metafields.custom.min_quantity }}"
                       value="{{ product.metafields.custom.min_quantity }}"
                       form="{{ product_form_id }}"
                     />
